@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruffle Hub | Growth & Technology Partner for Real Estate</title>
     
-    <meta name="description" content="Ruffle Hub is a PropTech sandbox building zero-bloat CRMs, WhatsApp automations, and custom growth engines for mid-sized real estate developers.">
+    <meta name="description" content="Ruffle Hub is a PropTech sandbox building zero-bloat CRMs, WhatsApp automations, and custom growth engines for real estate developers.">
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CREH902476"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CREH902476');
+    </script>
+
     <!-- Modern Favicon & App Manifest Support -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/web-app-manifest-192x192.png">
@@ -16,7 +26,7 @@
     <!-- Fonts: Montserrat (Headings) & Open Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -78,7 +88,7 @@
             top: 0;
             z-index: 1000;
         }
-        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
+        .logo img { height: 38px; width: auto; display: block; }
         nav ul { list-style: none; display: flex; gap: 32px; }
         nav ul li a { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
         nav ul li a:hover { color: var(--tech-blue); }
@@ -89,7 +99,14 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        #hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px; }
+        /* Headline styled to be sleeker and less overwhelmingly bold */
+        #hero h1 { 
+            font-size: 3.2rem; 
+            font-weight: 600; 
+            line-height: 1.25; 
+            margin-bottom: 24px; 
+            letter-spacing: -0.5px;
+        }
         #hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 500; }
 
         .mockup-grid {
@@ -119,37 +136,6 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .tech-stack-banner {
-            background-color: var(--bg-light);
-            padding: 30px 0;
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-            overflow: hidden;
-            display: flex;
-            white-space: nowrap;
-        }
-        .tech-track {
-            display: flex;
-            gap: 50px;
-            animation: scrollMarquee 25s linear infinite;
-        }
-        .tech-pill {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .tech-pill::before {
-            content: ''; display: block; width: 8px; height: 8px; background-color: var(--tech-blue); border-radius: 50%;
-        }
-        @keyframes scrollMarquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
         .section-container { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
 
@@ -167,6 +153,9 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .bento-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
@@ -175,7 +164,9 @@
         }
         .bento-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .bento-card:hover::before { opacity: 1; }
-        .bento-card h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--primary-hub); }
+        .bento-card h3 { font-size: 1.4rem; margin-bottom: 16px; color: var(--primary-hub); }
+        .case-study-link { color: var(--vibrant-ruffle); font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; display: inline-block; margin-top: 20px; }
+        .case-study-link:hover { color: var(--primary-hub); }
 
         #sandbox { background-color: var(--bg-light); }
         .timeline {
@@ -190,13 +181,6 @@
             background-color: var(--bg-white); border: 4px solid var(--tech-blue); border-radius: 50%; z-index: 2;
         }
         .timeline-item h4 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-hub); }
-
-        .playbook-card {
-            border-left: 4px solid var(--vibrant-ruffle); background-color: var(--bg-light);
-            padding: 24px; margin-bottom: 20px; border-radius: 0 8px 8px 0; transition: background-color 0.3s;
-        }
-        .playbook-card:hover { background-color: #F0F4F8; cursor: pointer; }
-        .playbook-card h4 { color: var(--tech-blue); margin-bottom: 8px; }
 
         #audit-form { background-color: var(--primary-hub); padding: 80px 5%; color: var(--bg-white); }
         #audit-form h2 { color: var(--bg-white); text-align: center; }
@@ -223,7 +207,7 @@
         .footer-bottom { text-align: center; border-top: 1px solid var(--border-light); padding-top: 20px; color: var(--text-muted); font-size: 0.85rem; }
 
         @media (max-width: 768px) {
-            #hero h1 { font-size: 2.5rem; }
+            #hero h1 { font-size: 2.3rem; }
             nav ul { display: none; }
         }
     </style>
@@ -231,24 +215,25 @@
 <body>
 
     <header>
-        <div class="logo">Ruffle Hub</div>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo.png" alt="Ruffle Hub Solutions"></a>
+        </div>
         <nav>
             <ul>
-                <li><a href="#services">Platform</a></li>
-                <li><a href="#growth">Growth</a></li>
-                <li><a href="#sandbox">How We Work</a></li>
-                <li><a href="#playbooks">Playbooks</a></li>
+                <li><a href="#services">Capabilities</a></li>
+                <li><a href="#sandbox">Methodology</a></li>
+                <li><a href="#audit-form">Contact</a></li>
             </ul>
         </nav>
         <a href="#audit-form" class="btn-primary" style="padding: 10px 20px;">Book an Audit</a>
     </header>
 
     <main>
-        <!-- Hero Section with Dual Mockup Showcase -->
+        <!-- Hero Section -->
         <section id="hero">
             <h1>Real Estate Sales Automation, Simplified.</h1>
-            <p>Manage the full customer journey without the tech bloat. We build frictionless, Google-backed workflows for mid-sized builders—giving you enterprise-level efficiency without the headache.</p>
-            <a href="#audit-form" class="btn-primary" style="font-size: 1.1rem;">Get Your 10-Day Setup Blueprint</a>
+            <p>Manage the full customer journey without the tech bloat. We build frictionless, Google-backed workflows for real estate—giving you enterprise-level efficiency without the headache.</p>
+            <a href="#audit-form" class="btn-primary" style="font-size: 1.1rem;">Request Your Setup Blueprint</a>
             
             <div class="mockup-grid">
                 <div class="mockup-card">
@@ -262,50 +247,33 @@
             </div>
         </section>
 
-        <!-- Animated Tech Stack Banner -->
-        <div class="tech-stack-banner">
-            <div class="tech-track">
-                <div class="tech-pill">Google Workspace</div>
-                <div class="tech-pill">WhatsApp Cloud API</div>
-                <div class="tech-pill">Razorpay</div>
-                <div class="tech-pill">99acres</div>
-                <div class="tech-pill">Make.com</div>
-                <div class="tech-pill">MagicBricks</div>
-                <div class="tech-pill">Looker Studio</div>
-                <div class="tech-pill">Easebuzz</div>
-                
-                <div class="tech-pill">Google Workspace</div>
-                <div class="tech-pill">WhatsApp Cloud API</div>
-                <div class="tech-pill">Razorpay</div>
-                <div class="tech-pill">99acres</div>
-                <div class="tech-pill">Make.com</div>
-                <div class="tech-pill">MagicBricks</div>
-                <div class="tech-pill">Looker Studio</div>
-                <div class="tech-pill">Easebuzz</div>
-            </div>
-        </div>
-
-        <!-- Services / Bento Grid -->
+        <!-- Core Capabilities / Case Study Teasers -->
         <section id="services" class="section-container">
-            <h2 class="section-header">The Full-Stack Real Estate Engine</h2>
+            <h2 class="section-header">Proven PropTech Engineering</h2>
             
             <div class="bento-grid">
                 <div class="bento-card">
-                    <h3>Platform & Automation</h3>
-                    <p><strong>RECA CRM:</strong> The zero-bloat, custom Google AppSheet workflow. Get exactly the features you need to track leads, and none of the clutter.</p>
-                    <p style="margin-top: 15px;"><strong>WhatsApp Automation:</strong> Instant lead qualification and 24/7 engagement to ensure zero dropped leads from your property portals.</p>
-                </div>
-
-                <div id="growth" class="bento-card">
-                    <h3>Growth & Sales</h3>
-                    <p><strong>Performance Marketing:</strong> We don't just build the engine; we fill your pipeline with high-intent real estate buyers across Google and Meta.</p>
-                    <p style="margin-top: 15px;"><strong>Dedicated Telecalling:</strong> Don't have the headcount? We provide a trained sales team to call, qualify, and close directly within your new system.</p>
+                    <div>
+                        <h3>Lead Routing Automation</h3>
+                        <p>We push leads from 99acres and MagicBricks directly to your sales team's WhatsApp in under 3 seconds to secure first-mover advantage.</p>
+                    </div>
+                    <a href="case-study-lead-routing.html" class="case-study-link">Read Case Study &rarr;</a>
                 </div>
 
                 <div class="bento-card">
-                    <h3>Custom Tech & Security</h3>
-                    <p><strong>Bespoke Development:</strong> Need a custom customer portal or seamless payment gateway integration for builder token collection? We build it natively.</p>
-                    <p style="margin-top: 15px;"><strong>Web App Security Audits:</strong> Enterprise-grade security to ensure your client data and transactions are absolutely bulletproof.</p>
+                    <div>
+                        <h3>Frictionless Token Collection</h3>
+                        <p>Integrating Razorpay and Easebuzz into custom dashboards to collect booking advances instantly and reconcile ledgers automatically.</p>
+                    </div>
+                    <a href="case-study-token-collection.html" class="case-study-link">Read Case Study &rarr;</a>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <h3>ICP Lead Enrichment & Scoring</h3>
+                        <p>Automatically scoring and segmenting incoming ad inquiries so telecallers focus 100% of their effort on high-intent buyers.</p>
+                    </div>
+                    <a href="case-study-lead-enrichment.html" class="case-study-link">Read Case Study &rarr;</a>
                 </div>
             </div>
         </section>
@@ -332,28 +300,7 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <h4>4. Deploy & Drive</h4>
-                    <p>Within 10 days, your system is live. We train your team (or deploy our own telecallers) and hand over the keys to a predictable growth engine.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Playbooks Teaser -->
-        <section id="playbooks" class="section-container">
-            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Built for Real Estate.</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 30px;">We solve highly specific problems for lean developers. Explore our playbooks to see exactly how we engineer solutions.</p>
-                    <a href="#audit-form" style="color: var(--vibrant-ruffle); font-weight: 700;">Discuss your use case &rarr;</a>
-                </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <div class="playbook-card">
-                        <h4>Lead Routing Automation</h4>
-                        <p>How we push leads from 99acres and MagicBricks directly to a broker's WhatsApp in under 3 seconds.</p>
-                    </div>
-                    <div class="playbook-card">
-                        <h4>Frictionless Token Collection</h4>
-                        <p>Integrating Razorpay into custom dashboards to collect and reconcile booking advances instantly.</p>
-                    </div>
+                    <p>Within 10 days, your system is live. We train your team and hand over the keys to a predictable growth engine.</p>
                 </div>
             </div>
         </section>
@@ -399,23 +346,24 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo" style="margin-bottom: 15px; font-size: 1.2rem;">Ruffle Hub</div>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Growth and Technology Partner for mid-sized Real Estate Developers.</p>
+                <div class="logo" style="margin-bottom: 15px;">
+                    <img src="assets/logo.png" alt="Ruffle Hub" style="height: 32px; width: auto;">
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Growth and Technology Partner for Real Estate.</p>
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
                 <ul>
                     <li><a href="#services">RECA CRM Implementation</a></li>
-                    <li><a href="#growth">Performance Marketing</a></li>
-                    <li><a href="#growth">Dedicated Telecalling</a></li>
-                    <li><a href="#services">Web App Security</a></li>
+                    <li><a href="#services">Lead Routing Automation</a></li>
+                    <li><a href="#services">Token Collection Workflows</a></li>
+                    <li><a href="#services">Web App Security Audits</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
                 <ul>
                     <li><a href="#sandbox">Our Methodology</a></li>
-                    <li><a href="#playbooks">Playbooks</a></li>
                     <li><a href="#audit-form">Book an Audit</a></li>
                 </ul>
             </div>
@@ -424,8 +372,8 @@
                 <ul>
                     <li><a href="mailto:hello@rufflehub.biz">hello@rufflehub.biz</a></li>
                     <li><span style="color: var(--text-muted); font-size: 0.95rem;">Bangalore, India</span></li>
-                    <li style="margin-top: 15px;"><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li style="margin-top: 15px;"><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
