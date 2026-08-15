@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruffle Hub | Growth & Technology Partner for Real Estate</title>
+    
+    <meta name="description" content="Ruffle Hub is a PropTech sandbox building zero-bloat CRMs, WhatsApp automations, and custom growth engines for mid-sized real estate developers.">
+    
+    <!-- Google Analytics Placeholder -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+
+    <!-- Fonts: Montserrat (Headings) & Open Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <style>
+        :root {
+            /* Ruffle Hub Brand Colors */
+            --primary-hub: #3A245C; 
+            --vibrant-ruffle: #8A4FFF; 
+            --tech-blue: #5B9CD6; 
+            
+            /* Light Mode Palette */
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --text-dark: #2D3748; /* Charcoal for body readability */
+            --text-muted: #718096;
+            --border-light: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-hub);
+        }
+
+        a { text-decoration: none; transition: color 0.3s; }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--vibrant-ruffle);
+            color: #FFFFFF;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(138, 79, 255, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: var(--primary-hub);
+            box-shadow: 0 6px 20px rgba(58, 36, 92, 0.3);
+        }
+
+        /* Navigation */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.5px; }
+        nav ul { list-style: none; display: flex; gap: 32px; }
+        nav ul li a { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+        nav ul li a:hover { color: var(--tech-blue); }
+
+        /* Hero Section */
+        #hero {
+            padding: 100px 5% 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        #hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px; }
+        #hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 500; }
+
+        /* Animated Tech Stack Banner */
+        .tech-stack-banner {
+            background-color: var(--bg-light);
+            padding: 30px 0;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
+        }
+        .tech-track {
+            display: flex;
+            gap: 50px;
+            animation: scrollMarquee 25s linear infinite;
+        }
+        .tech-pill {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tech-pill::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--tech-blue);
+            border-radius: 50%;
+        }
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Common Section Layout */
+        .section-container { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .bento-card {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--vibrant-ruffle), var(--tech-blue));
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .bento-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .bento-card:hover::before { opacity: 1; }
+        .bento-card h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--primary-hub); }
+
+        /* The Sandbox Process Map */
+        #sandbox { background-color: var(--bg-light); }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; left: 24px; width: 2px; height: 100%;
+            background-color: var(--border-light);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+        }
+        .timeline-dot {
+            position: absolute; left: 15px; top: 5px; width: 20px; height: 20px;
+            background-color: var(--bg-white);
+            border: 4px solid var(--tech-blue);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .timeline-item h4 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-hub); }
+
+        /* Playbooks */
+        .playbook-card {
+            border-left: 4px solid var(--vibrant-ruffle);
+            background-color: var(--bg-light);
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+            transition: background-color 0.3s;
+        }
+        .playbook-card:hover { background-color: #F0F4F8; cursor: pointer; }
+        .playbook-card h4 { color: var(--tech-blue); margin-bottom: 8px; }
+
+        /* Form Section */
+        #audit-form { background-color: var(--primary-hub); padding: 80px 5%; color: var(--bg-white); }
+        #audit-form h2 { color: var(--bg-white); text-align: center; }
+        #audit-form p.subtitle { color: #D1C5E4; text-align: center; margin-bottom: 40px; }
+        .form-container {
+            max-width: 600px; margin: 0 auto; background-color: var(--bg-white);
+            padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            color: var(--text-dark);
+        }
+        form { display: flex; flex-direction: column; gap: 20px; }
+        label { font-weight: 700; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; color: var(--primary-hub); }
+        input, select {
+            width: 100%; padding: 14px; background-color: var(--bg-light);
+            border: 1px solid var(--border-light); border-radius: 6px;
+            font-family: 'Open Sans', sans-serif; font-size: 1rem; color: var(--text-dark);
+        }
+        input:focus, select:focus { outline: none; border-color: var(--tech-blue); box-shadow: 0 0 0 3px rgba(91, 156, 214, 0.15); }
+
+        /* Expanded Footer */
+        footer { background-color: var(--bg-light); padding: 60px 5% 20px; border-top: 1px solid var(--border-light); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
+        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--primary-hub); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: var(--text-muted); font-size: 0.95rem; }
+        .footer-col ul li a:hover { color: var(--vibrant-ruffle); }
+        .footer-bottom { text-align: center; border-top: 1px solid var(--border-light); padding-top: 20px; color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ruffle Hub</div>
+        <nav>
+            <ul>
+                <li><a href="#services">Platform</a></li>
+                <li><a href="#growth">Growth</a></li>
+                <li><a href="#sandbox">How We Work</a></li>
+                <li><a href="#playbooks">Playbooks</a></li>
+            </ul>
+        </nav>
+        <a href="#audit-form" class="btn-primary" style="padding: 10px 20px;">Book an Audit</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>Real Estate Sales Automation, Simplified.</h1>
+            <p>Manage the full customer journey without the tech bloat. We build frictionless, Google-backed workflows for mid-sized builders—giving you enterprise-level efficiency without the headache.</p>
+            <a href="#audit-form" class="btn-primary" style="font-size: 1.1rem;">Get Your 10-Day Setup Blueprint</a>
+        </section>
+
+        <!-- Animated Tech Stack Banner -->
+        <div class="tech-stack-banner">
+            <div class="tech-track">
+                <!-- Repeated twice to create an infinite scroll illusion -->
+                <div class="tech-pill">Google Workspace</div>
+                <div class="tech-pill">WhatsApp Cloud API</div>
+                <div class="tech-pill">Razorpay</div>
+                <div class="tech-pill">99acres</div>
+                <div class="tech-pill">Make.com</div>
+                <div class="tech-pill">MagicBricks</div>
+                <div class="tech-pill">Looker Studio</div>
+                <div class="tech-pill">Easebuzz</div>
+                
+                <div class="tech-pill">Google Workspace</div>
+                <div class="tech-pill">WhatsApp Cloud API</div>
+                <div class="tech-pill">Razorpay</div>
+                <div class="tech-pill">99acres</div>
+                <div class="tech-pill">Make.com</div>
+                <div class="tech-pill">MagicBricks</div>
+                <div class="tech-pill">Looker Studio</div>
+                <div class="tech-pill">Easebuzz</div>
+            </div>
+        </div>
+
+        <!-- Services / Bento Grid -->
+        <section id="services" class="section-container">
+            <h2 class="section-header">The Full-Stack Real Estate Engine</h2>
+            
+            <div class="bento-grid">
+                <div class="bento-card">
+                    <h3>Platform & Automation</h3>
+                    <p><strong>RECA CRM:</strong> The zero-bloat, custom Google AppSheet workflow. Get exactly the features you need to track leads, and none of the clutter.</p>
+                    <p style="margin-top: 15px;"><strong>WhatsApp Automation:</strong> Instant lead qualification and 24/7 engagement to ensure zero dropped leads from your property portals.</p>
+                </div>
+
+                <div id="growth" class="bento-card">
+                    <h3>Growth & Sales</h3>
+                    <p><strong>Performance Marketing:</strong> We don't just build the engine; we fill your pipeline with high-intent real estate buyers across Google and Meta.</p>
+                    <p style="margin-top: 15px;"><strong>Dedicated Telecalling:</strong> Don't have the headcount? We provide a trained sales team to call, qualify, and close directly within your new system.</p>
+                </div>
+
+                <div class="bento-card">
+                    <h3>Custom Tech & Security</h3>
+                    <p><strong>Bespoke Development:</strong> Need a custom customer portal or seamless payment gateway integration for builder token collection? We build it natively.</p>
+                    <p style="margin-top: 15px;"><strong>Web App Security Audits:</strong> Enterprise-grade security to ensure your client data and transactions are absolutely bulletproof.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Sandbox Process Map -->
+        <section id="sandbox" class="section-container" style="padding-top: 80px; padding-bottom: 80px;">
+            <h2 class="section-header">The Sandbox Methodology</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>1. The Workflow Audit</h4>
+                    <p>We analyze your current lead sources, messy spreadsheets, and dropped follow-ups to find the exact bottlenecks costing you sales.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>2. Sandbox Mapping</h4>
+                    <p>We design a frictionless architectural blueprint connecting your ads, portals, and WhatsApp into a single, cohesive ecosystem.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>3. Zero-Bloat Build</h4>
+                    <p>Using Google infrastructure, we build only what you need. No unnecessary features to confuse your sales team. Just pure functionality.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4>4. Deploy & Drive</h4>
+                    <p>Within 10 days, your system is live. We train your team (or deploy our own telecallers) and hand over the keys to a predictable growth engine.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playbooks Teaser -->
+        <section id="playbooks" class="section-container">
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Built for Real Estate.</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 30px;">We solve highly specific problems for lean developers. Explore our playbooks to see exactly how we engineer solutions.</p>
+                    <a href="#audit-form" style="color: var(--vibrant-ruffle); font-weight: 700;">Discuss your use case &rarr;</a>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="playbook-card">
+                        <h4>Lead Routing Automation</h4>
+                        <p>How we push leads from 99acres and MagicBricks directly to a broker's WhatsApp in under 3 seconds.</p>
+                    </div>
+                    <div class="playbook-card">
+                        <h4>Frictionless Token Collection</h4>
+                        <p>Integrating Razorpay into custom dashboards to collect and reconcile booking advances instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Capture Form -->
+        <section id="audit-form">
+            <h2>Book Your 15-Minute System Audit</h2>
+            <p class="subtitle">Walk away with a custom blueprint to automate your real estate sales.</p>
+            
+            <div class="form-container">
+                <form id="leadForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" required placeholder="founder@builder.com">
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+91 00000 00000">
+                    
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required placeholder="Acme Developers">
+
+                    <label for="goal">What is your primary goal?</label>
+                    <select id="goal" name="goal" required>
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="track-leads">I want to better track my leads (RECA CRM)</option>
+                        <option value="generate-interest">I want to generate more qualified interest for my projects</option>
+                        <option value="sales-team">I need a dedicated sales team to call my leads</option>
+                        <option value="custom-tech">I need a custom app or payment integration</option>
+                        <option value="security-audit">I need a web app security audit</option>
+                    </select>
+                    
+                    <button type="submit" id="submitBtn" class="btn-primary" style="margin-top: 10px; width: 100%;">Request Blueprint</button>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 10px;">All audit requests are reviewed within 24 hours.</p>
+                </form>
+                <div id="statusMsg" style="text-align: center; margin-top: 20px; font-weight: 600;"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Expanded Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px; font-size: 1.2rem;">Ruffle Hub</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Growth and Technology Partner for mid-sized Real Estate Developers.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">RECA CRM Implementation</a></li>
+                    <li><a href="#growth">Performance Marketing</a></li>
+                    <li><a href="#growth">Dedicated Telecalling</a></li>
+                    <li><a href="#services">Web App Security</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#sandbox">Our Methodology</a></li>
+                    <li><a href="#playbooks">Playbooks</a></li>
+                    <li><a href="#audit-form">Book an Audit</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact & Legal</h4>
+                <ul>
+                    <li><a href="mailto:hello@rufflehub.biz">hello@rufflehub.biz</a></li>
+                    <li><span style="color: var(--text-muted); font-size: 0.95rem;">Bangalore, India</span></li>
+                    <li style="margin-top: 15px;"><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ruffle Hub Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Google Apps Script Connection -->
+    <script>
+        const form = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const statusMsg = document.getElementById('statusMsg');
+
+        // Your exact Google Apps Script URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby5s16JA5UJOqe_tfunhpqRq_dPMvMBgVvkei13bOMbg0uUIbahRlZ1K-iKz7DOUynlZg/exec';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            submitBtn.textContent = 'Transferring Data securely...';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.disabled = true;
+            statusMsg.textContent = '';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === "success") {
+                    form.style.display = 'none';
+                    statusMsg.innerHTML = '<h3 style="color: var(--tech-blue); font-family: Montserrat;">Audit Requested Successfully!</h3><p style="margin-top: 10px; color: var(--text-dark);">We have received your request and will contact you within 24 hours with next steps.</p>';
+                } else {
+                    throw new Error(result.message);
+                }
+            } catch (error) {
+                console.error('Error!', error.message);
+                statusMsg.textContent = 'Error submitting application. Please try again or email us directly.';
+                statusMsg.style.color = '#E53E3E';
+                
+                submitBtn.textContent = 'Request Blueprint';
+                submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
