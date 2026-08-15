@@ -7,32 +7,25 @@
     
     <meta name="description" content="Ruffle Hub is a PropTech sandbox building zero-bloat CRMs, WhatsApp automations, and custom growth engines for mid-sized real estate developers.">
     
-    <!-- Google Analytics Placeholder -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script> -->
+    <!-- Modern Favicon & App Manifest Support -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/web-app-manifest-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/web-app-manifest-512x512.png">
+    <link rel="manifest" href="assets/site.webmanifest">
 
     <!-- Fonts: Montserrat (Headings) & Open Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <style>
         :root {
-            /* Ruffle Hub Brand Colors */
             --primary-hub: #3A245C; 
             --vibrant-ruffle: #8A4FFF; 
             --tech-blue: #5B9CD6; 
-            
-            /* Light Mode Palette */
             --bg-white: #FFFFFF;
             --bg-light: #F8F9FA;
-            --text-dark: #2D3748; /* Charcoal for body readability */
+            --text-dark: #2D3748;
             --text-muted: #718096;
             --border-light: #E2E8F0;
         }
@@ -55,7 +48,6 @@
 
         a { text-decoration: none; transition: color 0.3s; }
 
-        /* Button Styles */
         .btn-primary {
             background-color: var(--vibrant-ruffle);
             color: #FFFFFF;
@@ -75,7 +67,6 @@
             box-shadow: 0 6px 20px rgba(58, 36, 92, 0.3);
         }
 
-        /* Navigation */
         header {
             padding: 20px 5%;
             display: flex;
@@ -92,17 +83,42 @@
         nav ul li a { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
         nav ul li a:hover { color: var(--tech-blue); }
 
-        /* Hero Section */
         #hero {
             padding: 100px 5% 60px;
             text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         #hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 24px; }
         #hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 500; }
 
-        /* Animated Tech Stack Banner */
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+        .mockup-card {
+            background: var(--bg-light);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+        }
+        .mockup-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        .mockup-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .tech-stack-banner {
             background-color: var(--bg-light);
             padding: 30px 0;
@@ -111,7 +127,6 @@
             overflow: hidden;
             display: flex;
             white-space: nowrap;
-            position: relative;
         }
         .tech-track {
             display: flex;
@@ -128,23 +143,16 @@
             gap: 10px;
         }
         .tech-pill::before {
-            content: '';
-            display: block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--tech-blue);
-            border-radius: 50%;
+            content: ''; display: block; width: 8px; height: 8px; background-color: var(--tech-blue); border-radius: 50%;
         }
         @keyframes scrollMarquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Common Section Layout */
         .section-container { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
 
-        /* Bento Grid */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -169,64 +177,42 @@
         .bento-card:hover::before { opacity: 1; }
         .bento-card h3 { font-size: 1.5rem; margin-bottom: 16px; color: var(--primary-hub); }
 
-        /* The Sandbox Process Map */
         #sandbox { background-color: var(--bg-light); }
         .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+            display: flex; flex-direction: column; gap: 40px; position: relative; max-width: 800px; margin: 0 auto;
         }
         .timeline::before {
-            content: ''; position: absolute; top: 0; left: 24px; width: 2px; height: 100%;
-            background-color: var(--border-light);
+            content: ''; position: absolute; top: 0; left: 24px; width: 2px; height: 100%; background-color: var(--border-light);
         }
-        .timeline-item {
-            position: relative;
-            padding-left: 70px;
-        }
+        .timeline-item { position: relative; padding-left: 70px; }
         .timeline-dot {
             position: absolute; left: 15px; top: 5px; width: 20px; height: 20px;
-            background-color: var(--bg-white);
-            border: 4px solid var(--tech-blue);
-            border-radius: 50%;
-            z-index: 2;
+            background-color: var(--bg-white); border: 4px solid var(--tech-blue); border-radius: 50%; z-index: 2;
         }
         .timeline-item h4 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary-hub); }
 
-        /* Playbooks */
         .playbook-card {
-            border-left: 4px solid var(--vibrant-ruffle);
-            background-color: var(--bg-light);
-            padding: 24px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-            transition: background-color 0.3s;
+            border-left: 4px solid var(--vibrant-ruffle); background-color: var(--bg-light);
+            padding: 24px; margin-bottom: 20px; border-radius: 0 8px 8px 0; transition: background-color 0.3s;
         }
         .playbook-card:hover { background-color: #F0F4F8; cursor: pointer; }
         .playbook-card h4 { color: var(--tech-blue); margin-bottom: 8px; }
 
-        /* Form Section */
         #audit-form { background-color: var(--primary-hub); padding: 80px 5%; color: var(--bg-white); }
         #audit-form h2 { color: var(--bg-white); text-align: center; }
         #audit-form p.subtitle { color: #D1C5E4; text-align: center; margin-bottom: 40px; }
         .form-container {
             max-width: 600px; margin: 0 auto; background-color: var(--bg-white);
-            padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            color: var(--text-dark);
+            padding: 40px; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); color: var(--text-dark);
         }
         form { display: flex; flex-direction: column; gap: 20px; }
         label { font-weight: 700; font-size: 0.9rem; font-family: 'Montserrat', sans-serif; color: var(--primary-hub); }
         input, select {
             width: 100%; padding: 14px; background-color: var(--bg-light);
-            border: 1px solid var(--border-light); border-radius: 6px;
-            font-family: 'Open Sans', sans-serif; font-size: 1rem; color: var(--text-dark);
+            border: 1px solid var(--border-light); border-radius: 6px; font-family: 'Open Sans', sans-serif; font-size: 1rem; color: var(--text-dark);
         }
         input:focus, select:focus { outline: none; border-color: var(--tech-blue); box-shadow: 0 0 0 3px rgba(91, 156, 214, 0.15); }
 
-        /* Expanded Footer */
         footer { background-color: var(--bg-light); padding: 60px 5% 20px; border-top: 1px solid var(--border-light); }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; }
         .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--primary-hub); }
@@ -258,17 +244,27 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Dual Mockup Showcase -->
         <section id="hero">
             <h1>Real Estate Sales Automation, Simplified.</h1>
             <p>Manage the full customer journey without the tech bloat. We build frictionless, Google-backed workflows for mid-sized builders—giving you enterprise-level efficiency without the headache.</p>
             <a href="#audit-form" class="btn-primary" style="font-size: 1.1rem;">Get Your 10-Day Setup Blueprint</a>
+            
+            <div class="mockup-grid">
+                <div class="mockup-card">
+                    <img src="assets/reca-dashboard-mockup.png" alt="RECA CRM Lead Management Dashboard">
+                    <div class="mockup-caption">RECA CRM: Unified Lead Pipeline</div>
+                </div>
+                <div class="mockup-card">
+                    <img src="assets/reca-analytics-mockup.png" alt="RECA Real Estate Analytics Dashboard">
+                    <div class="mockup-caption">RECA Analytics: Real-Time Performance Tracking</div>
+                </div>
+            </div>
         </section>
 
         <!-- Animated Tech Stack Banner -->
         <div class="tech-stack-banner">
             <div class="tech-track">
-                <!-- Repeated twice to create an infinite scroll illusion -->
                 <div class="tech-pill">Google Workspace</div>
                 <div class="tech-pill">WhatsApp Cloud API</div>
                 <div class="tech-pill">Razorpay</div>
@@ -444,7 +440,6 @@
         const submitBtn = document.getElementById('submitBtn');
         const statusMsg = document.getElementById('statusMsg');
 
-        // Your exact Google Apps Script URL
         const scriptURL = 'https://script.google.com/macros/s/AKfycby5s16JA5UJOqe_tfunhpqRq_dPMvMBgVvkei13bOMbg0uUIbahRlZ1K-iKz7DOUynlZg/exec';
 
         form.addEventListener('submit', async (e) => {
